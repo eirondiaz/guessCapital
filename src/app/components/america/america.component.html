@@ -1,0 +1,42 @@
+<div class="container my-5">
+    <h4 class="text-center">Adivina las capitales de los paises de América!</h4>
+    <div *ngIf="started">
+        <h1 class="text-center mt-4">{{partida}}/57 - {{paisEnJuego.translations.es === null? paisEnJuego.name : paisEnJuego.translations.es}}</h1>
+        <p class="text-center" style="font-size: 25px;">Acertadas: <b>{{puntos}}</b>, Erroneas: <b>{{mala}}</b></p>
+        <div class="row mt-4">
+            <div class="col-4 offset-4">
+                <div class="card mb-2" (click)="!clicked? adivinar(capitalList[randomToSHowCapitaList[0]]): null">
+                    <div class="card-body">
+                        <h6 class="text-center">{{capitalList[randomToSHowCapitaList[0]]}}</h6>
+                    </div>
+                </div>
+                <div class="card mb-2" (click)="!clicked? adivinar(capitalList[randomToSHowCapitaList[1]]): null">
+                    <div class="card-body">
+                        <h6 class="text-center">{{capitalList[randomToSHowCapitaList[1]]}}</h6>
+                    </div>
+                </div>
+                <div class="card mb-2" (click)="!clicked? adivinar(capitalList[randomToSHowCapitaList[2]]): null">
+                    <div class="card-body">
+                        <h6 class="text-center">{{capitalList[randomToSHowCapitaList[2]]}}</h6>
+                    </div>
+                </div>
+                <div class="card mb-2" (click)="!clicked? adivinar(capitalList[randomToSHowCapitaList[3]]): null">
+                    <div class="card-body">
+                        <h6 class="text-center">{{capitalList[randomToSHowCapitaList[3]]}}</h6>
+                    </div>
+                </div>
+                <div class="card mb-2" (click)="!clicked? adivinar(capitalList[randomToSHowCapitaList[4]]): null">
+                    <div class="card-body">
+                        <h6 class="text-center">{{capitalList[randomToSHowCapitaList[4]]}}</h6>
+                    </div>
+                </div>
+            </div>
+            <p *ngIf="correcta" class="text-success text-center mt-3">Correcto, la capital de <b>{{paisEnJuego.translations.es === null? paisEnJuego.name : paisEnJuego.translations.es}}</b> es <b>{{paisEnJuego.capital}}</b></p>
+            <p *ngIf="erronea" class="text-danger text-center mt-3">Incorrecto, la capital de <b>{{paisEnJuego.translations.es === null? paisEnJuego.name : paisEnJuego.translations.es}}</b> es <b>{{paisEnJuego.capital}}</b></p>
+        </div>
+    </div>
+    <div class="text-center">
+        <button (click)="play()" [hidden]="started" [disabled]="randomList.length == 57 || started">Empezar</button>
+        <button (click)="play()" class="btn btn-primary mt-3" [hidden]="!started" [disabled]="randomList.length == 57 || !clicked">Siguiente</button>
+    </div>
+</div>
