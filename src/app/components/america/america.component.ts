@@ -1,5 +1,5 @@
 import { PaisService } from './../../services/pais.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-america',
@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./america.component.scss']
 })
 export class AmericaComponent implements OnInit {
+
+  @ViewChild('card1', { static: false }) card1: ElementRef
+  @ViewChild('card2', { static: false }) card2: ElementRef
+  @ViewChild('card3', { static: false }) card3: ElementRef
+  @ViewChild('card4', { static: false }) card4: ElementRef
+  @ViewChild('card5', { static: false }) card5: ElementRef
 
   started: boolean = false
   randomList: any[] = []
@@ -39,6 +45,13 @@ export class AmericaComponent implements OnInit {
   }
 
   play() {
+    if (this.started) {
+      this.card1.nativeElement.className = 'card mb-2'
+      this.card2.nativeElement.className = 'card mb-2'
+      this.card3.nativeElement.className = 'card mb-2'
+      this.card4.nativeElement.className = 'card mb-2'
+      this.card5.nativeElement.className = 'card mb-2'
+    }
     this.started = true
     this.correcta = false
     this.erronea = false
@@ -59,6 +72,7 @@ export class AmericaComponent implements OnInit {
     this.randomToSHowCapitaList = [0, 1, 2, 3, 4]
     this.randomToSHowCapital()
     this.partida++ 
+
   }
 
   getPaises() {
@@ -115,14 +129,44 @@ export class AmericaComponent implements OnInit {
     console.log(this.randomToSHowCapitaList)
   }
 
-  adivinar(nombre) {
+  adivinar(nombre, card) {
     if (nombre === this.paisEnJuego.capital) {
       this.puntos++
       this.correcta = true
+      if (card === 1) { 
+        this.card1.nativeElement.className = 'card mb-2 alert-success'
+      }
+      else if (card === 2) {
+        this.card2.nativeElement.className = 'card mb-2 alert-success'      
+      }
+      else if (card === 3) {
+        this.card3.nativeElement.className = 'card mb-2 alert-success'      
+      }
+      else if (card === 4) {
+        this.card4.nativeElement.className = 'card mb-2 alert-success'      
+      }
+      else if (card === 5) {
+        this.card5.nativeElement.className = 'card mb-2 alert-success'      
+      }
     }
     else {
       this.mala++
       this.erronea = true
+      if (card === 1) { 
+        this.card1.nativeElement.className = 'card mb-2 alert-danger'
+      }
+      else if (card === 2) {
+        this.card2.nativeElement.className = 'card mb-2 alert-danger'      
+      }
+      else if (card === 3) {
+        this.card3.nativeElement.className = 'card mb-2 alert-danger'      
+      }
+      else if (card === 4) {
+        this.card4.nativeElement.className = 'card mb-2 alert-danger'      
+      }
+      else if (card === 5) {
+        this.card5.nativeElement.className = 'card mb-2 alert-danger'      
+      }
     }
     //this.play()
     this.clicked = true
