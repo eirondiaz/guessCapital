@@ -1,0 +1,47 @@
+.imagen {
+    position: absolute;
+    right: 0;
+    top: -80px;
+}
+
+.micardbad {
+    background-color: #EA8282;
+    border-radius: 10px;
+    border: 2px solid #EA8282;
+    color: white;
+}
+
+.micardgood {
+    background-color: #5FBC86;
+    border-radius: 10px;
+    border: 2px solid #5FBC86;
+    color: white;
+}
+
+.micard {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #5256A1;
+    color: #5256A1;
+}
+
+.micard:hover {
+    background-color: #F9A826;
+    border: 2px solid #F9A826;
+    color: white;
+    cursor: pointer;
+}
+
+.card {
+    border-radius: 20px;
+}
+
+.letra {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 12%;
+}
+
+.mibody {
+    padding: 8px 16px;
+}

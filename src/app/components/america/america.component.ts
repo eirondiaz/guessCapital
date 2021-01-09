@@ -46,11 +46,11 @@ export class AmericaComponent implements OnInit {
 
   play() {
     if (this.started) {
-      this.card1.nativeElement.className = 'card mb-2'
-      this.card2.nativeElement.className = 'card mb-2'
-      this.card3.nativeElement.className = 'card mb-2'
-      this.card4.nativeElement.className = 'card mb-2'
-      this.card5.nativeElement.className = 'card mb-2'
+      this.card1.nativeElement.className = 'micard mb-2'
+      this.card2.nativeElement.className = 'micard mb-2'
+      this.card3.nativeElement.className = 'micard mb-2'
+      this.card4.nativeElement.className = 'micard mb-2'
+      this.card5.nativeElement.className = 'micard mb-2'
     }
     this.started = true
     this.correcta = false
@@ -134,38 +134,38 @@ export class AmericaComponent implements OnInit {
       this.puntos++
       this.correcta = true
       if (card === 1) { 
-        this.card1.nativeElement.className = 'card mb-2 alert-success'
+        this.card1.nativeElement.className = 'micardgood mb-2'
       }
       else if (card === 2) {
-        this.card2.nativeElement.className = 'card mb-2 alert-success'      
+        this.card2.nativeElement.className = 'micardgood mb-2'      
       }
       else if (card === 3) {
-        this.card3.nativeElement.className = 'card mb-2 alert-success'      
+        this.card3.nativeElement.className = 'micardgood mb-2'      
       }
       else if (card === 4) {
-        this.card4.nativeElement.className = 'card mb-2 alert-success'      
+        this.card4.nativeElement.className = 'micardgood mb-2'      
       }
       else if (card === 5) {
-        this.card5.nativeElement.className = 'card mb-2 alert-success'      
+        this.card5.nativeElement.className = 'micardgood mb-2'      
       }
     }
     else {
       this.mala++
       this.erronea = true
       if (card === 1) { 
-        this.card1.nativeElement.className = 'card mb-2 alert-danger'
+        this.card1.nativeElement.className = 'micardbad mb-2'
       }
       else if (card === 2) {
-        this.card2.nativeElement.className = 'card mb-2 alert-danger'      
+        this.card2.nativeElement.className = 'micardbad mb-2'      
       }
       else if (card === 3) {
-        this.card3.nativeElement.className = 'card mb-2 alert-danger'      
+        this.card3.nativeElement.className = 'micardbad mb-2'      
       }
       else if (card === 4) {
-        this.card4.nativeElement.className = 'card mb-2 alert-danger'      
+        this.card4.nativeElement.className = 'micardbad mb-2'      
       }
       else if (card === 5) {
-        this.card5.nativeElement.className = 'card mb-2 alert-danger'      
+        this.card5.nativeElement.className = 'micardbad mb-2'      
       }
     }
     //this.play()
