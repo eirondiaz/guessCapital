@@ -2,7 +2,7 @@
     <div *ngIf="started">
         <p class="text-center" style="font-size: 25px;">Acertadas: <b>{{puntos}}</b>, Erroneas: <b>{{mala}}</b></p>
         <div class="row">
-            <div class="col-6 offset-3">
+            <div class="col-md-6 offset-md-3 col-sm-10 offset-sm-1">
                 <h4 style="color: white; font-weight: bold; font-size: 35px;">Paises de América</h4>
                 <div class="card">
                     <img class="imagen" src="/assets/undraw_adventure_4hum 1.svg">
@@ -12,30 +12,45 @@
                             <div class="mibody">
                                 <span class="letra">A</span>
                                 <span>{{capitalList[randomToSHowCapitaList[0]]}}</span>
+                                <div class="icon">
+                                    <i *ngIf="correcta  && goodcheck == 1" class="far fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="micard mb-2" #card2 (click)="!clicked? adivinar(capitalList[randomToSHowCapitaList[1]], 2): null">
                             <div class="mibody">
                                 <span class="letra">B</span>
                                 <span>{{capitalList[randomToSHowCapitaList[1]]}}</span>
+                                <div class="icon">
+                                    <i *ngIf="correcta  && goodcheck == 2" class="far fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="micard mb-2" #card3 (click)="!clicked? adivinar(capitalList[randomToSHowCapitaList[2]], 3): null">
                             <div class="mibody">
                                 <span class="letra">C</span>
                                 <span>{{capitalList[randomToSHowCapitaList[2]]}}</span>
+                                <div class="icon">
+                                    <i *ngIf="correcta  && goodcheck == 3" class="far fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="micard mb-2" #card4 (click)="!clicked? adivinar(capitalList[randomToSHowCapitaList[3]], 4): null">
                             <div class="mibody">
                                 <span class="letra">D</span>
                                 <span>{{capitalList[randomToSHowCapitaList[3]]}}</span>
+                                <div class="icon">
+                                    <i *ngIf="correcta  && goodcheck == 4" class="far fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="micard mb-2" #card5 (click)="!clicked? adivinar(capitalList[randomToSHowCapitaList[4]], 5): null">
                             <div class="mibody">
                                 <span class="letra">E</span>
                                 <span>{{capitalList[randomToSHowCapitaList[4]]}}</span>
+                                <div class="icon">
+                                    <i *ngIf="correcta  && goodcheck == 5" class="far fa-check-circle"></i>
+                                </div>
                             </div>
                         </div>
                         <div style="text-align: right;">

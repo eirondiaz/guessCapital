@@ -18,6 +18,13 @@
     color: white;
 }
 
+.micardnohover {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #5256A1;
+    color: #5256A1;
+}
+
 .micard {
     background-color: white;
     border-radius: 10px;
@@ -44,4 +51,12 @@
 
 .mibody {
     padding: 8px 16px;
+}
+
+.icon {
+    text-align: right; 
+    display: inline-block; 
+    float: right; 
+    font-size: 20px; 
+    margin-top: 3px;
 }
