@@ -15,6 +15,7 @@ export class AmericaComponent implements OnInit {
   @ViewChild('card5', { static: false }) card5: ElementRef
 
   goodcheck: number = 0
+  badcheck: number = 0
 
   started: boolean = false
   randomList: any[] = []
@@ -55,6 +56,7 @@ export class AmericaComponent implements OnInit {
       this.card5.nativeElement.className = 'micard mb-2'
 
       this.goodcheck = 0
+      this.badcheck = 0
     }
     this.started = true
     this.correcta = false
@@ -192,35 +194,67 @@ export class AmericaComponent implements OnInit {
         this.card3.nativeElement.className = 'micardnohover mb-2'
         this.card4.nativeElement.className = 'micardnohover mb-2'
         this.card5.nativeElement.className = 'micardnohover mb-2'
+
+        this.badcheck = 1
       }
       else if (card === 2) {
         this.card2.nativeElement.className = 'micardbad mb-2'   
         this.card1.nativeElement.className = 'micardnohover mb-2'
         this.card3.nativeElement.className = 'micardnohover mb-2'
         this.card4.nativeElement.className = 'micardnohover mb-2'
-        this.card5.nativeElement.className = 'micardnohover mb-2'    
+        this.card5.nativeElement.className = 'micardnohover mb-2'  
+        
+        this.badcheck = 2
       }
       else if (card === 3) {
         this.card3.nativeElement.className = 'micardbad mb-2'    
         this.card1.nativeElement.className = 'micardnohover mb-2'
         this.card2.nativeElement.className = 'micardnohover mb-2'
         this.card4.nativeElement.className = 'micardnohover mb-2'
-        this.card5.nativeElement.className = 'micardnohover mb-2'   
+        this.card5.nativeElement.className = 'micardnohover mb-2'  
+
+        this.badcheck = 3
       }
       else if (card === 4) {
         this.card4.nativeElement.className = 'micardbad mb-2'   
         this.card1.nativeElement.className = 'micardnohover mb-2'
         this.card2.nativeElement.className = 'micardnohover mb-2'
         this.card3.nativeElement.className = 'micardnohover mb-2'
-        this.card5.nativeElement.className = 'micardnohover mb-2'    
+        this.card5.nativeElement.className = 'micardnohover mb-2'  
+        
+        this.badcheck = 4
       }
       else if (card === 5) {
         this.card5.nativeElement.className = 'micardbad mb-2'  
         this.card1.nativeElement.className = 'micardnohover mb-2'
         this.card2.nativeElement.className = 'micardnohover mb-2'
         this.card3.nativeElement.className = 'micardnohover mb-2'
-        this.card4.nativeElement.className = 'micardnohover mb-2'     
+        this.card4.nativeElement.className = 'micardnohover mb-2' 
+        
+        this.badcheck = 5
       }
+    }
+    console.log(this.randomToSHowCapitaList.indexOf(4))
+
+    if (this.randomToSHowCapitaList.indexOf(4) === 0) {
+      this.card1.nativeElement.className = 'micardgood mb-2'
+      this.goodcheck = 1
+    }
+    if (this.randomToSHowCapitaList.indexOf(4) === 1) {
+      this.card2.nativeElement.className = 'micardgood mb-2'
+      this.goodcheck = 2
+    }
+    if (this.randomToSHowCapitaList.indexOf(4) === 2) {
+      this.card3.nativeElement.className = 'micardgood mb-2'
+      this.goodcheck = 3
+    }
+    if (this.randomToSHowCapitaList.indexOf(4) === 3) {
+      this.card4.nativeElement.className = 'micardgood mb-2'
+      this.goodcheck = 4
+    }
+    if (this.randomToSHowCapitaList.indexOf(4) === 4) {
+      this.card5.nativeElement.className = 'micardgood mb-2'
+      this.goodcheck = 5
     }
     //this.play()
     this.clicked = true
